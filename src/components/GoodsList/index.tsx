@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react'
-import { CATEGORIES, CATEGORY_ICONS, type Goods } from '../types'
-import { useGoods } from '../context/GoodsContext'
-import Select from './Select'
+import { CATEGORIES, CATEGORY_ICONS, type Goods } from '../../types'
+import { useGoods } from '../../context/GoodsContext'
+import Select from '../Select'
+import './index.scss'
 
 interface Props {
   onEdit: (item: Goods) => void

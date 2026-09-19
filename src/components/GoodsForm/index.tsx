@@ -1,7 +1,8 @@
 import { useEffect, useState, type FormEvent } from 'react'
-import { CATEGORIES, CATEGORY_ICONS, type Goods, type GoodsFormData } from '../types'
-import { useGoods } from '../context/GoodsContext'
-import Select from './Select'
+import { CATEGORIES, CATEGORY_ICONS, type Goods, type GoodsFormData } from '../../types'
+import { useGoods } from '../../context/GoodsContext'
+import Select from '../Select'
+import './index.scss'
 
 const EMPTY: GoodsFormData = {
   name: '',
@@ -53,7 +54,9 @@ export default function GoodsForm({ editing, onDone }: Props) {
   }
 
   return (
-    <form className="goods-form" onSubmit={handleSubmit}>
+    <div className="goods-form-card">
+      <h3 className="card-title">{editing ? '编辑货物信息' : '录入新货物'}</h3>
+      <form className="goods-form" onSubmit={handleSubmit}>
       <div className="field">
         <label>货物名称 *</label>
         <input
@@ -140,5 +143,6 @@ export default function GoodsForm({ editing, onDone }: Props) {
         )}
       </div>
     </form>
+    </div>
   )
 }

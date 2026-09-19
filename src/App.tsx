@@ -58,18 +58,9 @@ function Workspace() {
       <main className="content">
         {tab === 'dashboard' && <Dashboard />}
         {tab === 'entry' && (
-          <div className="card form-card">
-            <h3 className="card-title">
-              {editing ? '编辑货物信息' : '录入新货物'}
-            </h3>
-            <GoodsForm editing={editing} onDone={() => setEditing(null)} />
-          </div>
+          <GoodsForm editing={editing} onDone={() => setEditing(null)} />
         )}
-        {tab === 'list' && (
-          <div className="card">
-            <GoodsList onEdit={handleEdit} />
-          </div>
-        )}
+        {tab === 'list' && <GoodsList onEdit={handleEdit} />}
       </main>
     </div>
   )

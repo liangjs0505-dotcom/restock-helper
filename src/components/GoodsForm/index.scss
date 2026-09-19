@@ -1,0 +1,82 @@
+.goods-form-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  max-width: 640px;
+
+  .card-title {
+    margin: 0 0 18px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 26px;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 760px;
+  }
+}
+
+.goods-form {
+  .field {
+    flex: 1;
+    margin-bottom: 16px;
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+      background: #fff;
+      color: var(--text);
+
+      &:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px var(--primary-soft);
+      }
+    }
+  }
+
+  .field-row {
+    display: flex;
+    gap: 14px;
+    position: relative;
+
+    &:has(.select.open) {
+      z-index: 20;
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .goods-form-card {
+    background: #1e293b;
+  }
+
+  .goods-form .field input {
+    background: #1e293b;
+  }
+}

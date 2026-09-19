@@ -1,4 +1,5 @@
-import { useGoods } from '../context/GoodsContext'
+import { useGoods } from '../../context/GoodsContext'
+import './index.scss'
 
 const yuan = (n: number) => `¥${n.toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
 
@@ -9,7 +10,7 @@ export default function Dashboard() {
 
   const cards = [
     { label: '货物种类', value: stats.totalKinds, icon: '📦', accent: 'blue' },
-   { label: '库存总量', value: stats.totalStock, icon: '🗂️', accent: 'green' },
+    { label: '库存总量', value: stats.totalStock, icon: '🗂️', accent: 'green' },
     { label: '库存总价值', value: yuan(stats.totalValue), icon: '💰', accent: 'gold' },
     { label: '低库存预警', value: stats.lowStockCount, icon: '⚠️', accent: 'red' },
   ]
@@ -29,7 +30,6 @@ export default function Dashboard() {
       </div>
 
       <div className="dashboard-grid">
-        {/* 分类占比 */}
         <div className="card">
           <h3 className="card-title">分类库存价值</h3>
           {categoryStats.length === 0 ? (
@@ -56,7 +56,6 @@ export default function Dashboard() {
           )}
         </div>
 
-        {/* 低库存预警 */}
         <div className="card">
           <h3 className="card-title">
             补货提醒

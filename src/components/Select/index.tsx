@@ -1,4 +1,5 @@
 import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from 'react'
+import './index.scss'
 
 export interface SelectOption<T extends string = string> {
   value: T
