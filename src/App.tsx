@@ -31,7 +31,7 @@ function Workspace() {
         <div className="brand">
           <span className="brand-icon">🛒</span>
           <div>
-            <h1>超市货物管理系统</h1>
+            <h1>Treasure Family</h1>
           </div>
         </div>
       </header>
